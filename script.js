@@ -1,0 +1,1 @@
+//I created this js, and I suck at life
