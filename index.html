@@ -7,16 +7,78 @@
     <title>Fridge Raider!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/353c561873.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            <img class="fas fa-cookie-bite" width="112" height="28">
+          </a>
+      
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              About Us
+            </a>
+      
+            <a class="navbar-item">
+              Recipe Archive
+            </a>
+      
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                Contact Us
+              </a>
+      
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
+                  About
+                </a>
+                <!-- <a class="navbar-item">
+                  Jobs -->
+                </a>
+                <a class="navbar-item">
+                  Contact
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  Send us your recipe
+                </a>
+              </div>
+            </div>
+          </div>
+      
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary">
+                  <strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     <!-- making changes -->
     <div class="container">
         <section class="hero is-medium is-dark is-bold">
             <div class="hero-body">
                 <div class="container">
 
-                    <h1 class="title">
+                    <h1 class="title is-1 has-text-black">
                         <i class="fas fa-cookie-bite"></i></i>Fridge Raider
                     </h1>
                     <h2 class="subtitle">
@@ -32,7 +94,7 @@
                         <h3 class="panel-title">
                             <strong>
                                 <i class="fa fa-list-alt"></i>
-                                What do you got in there?
+                                So what's in your fridge...raider?
                             </strong>
                         </h3>
                     </div>
@@ -52,17 +114,17 @@
                                 <label class="label">Ingredients:</label>
                                 <div class="field has-addons">
                                     <div class="control">
-                                        <input class="input is-rounded" type="text" placeholder="Ingredients" id="firstInput">
+                                        <input class="input is-rounded" type="text" placeholder="A ton of" id="firstInput">
                                     </div>
                                 </div>
                                 <div class="field has-addons">
                                     <div class="control">
-                                        <input class="input is-rounded" type="text" placeholder="Ingredients" id="secondInput">
+                                        <input class="input is-rounded" type="text" placeholder="Some of" id="secondInput">
                                     </div>
                                 </div>
                                 <div class="field has-addons">
                                     <div class="control">
-                                        <input class="input is-rounded" type="text" placeholder="Ingredients" id="thirdInput">
+                                        <input class="input is-rounded" type="text" placeholder="A little of" id="thirdInput">
                                     </div>
                                 </div>
 
@@ -93,7 +155,7 @@
                         <h3 class="panel-title">
                             <strong>
                                 <i class="fa fa-table"></i>
-                                Top Suggestions
+                                Chefs Top Choices
                             </strong>
                         </h3>
                     </div>
@@ -118,6 +180,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
+
 </body>
 
 </html>
