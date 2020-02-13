@@ -28,4 +28,3 @@ $runSearch.on('click', function(event) {
 });
 // https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=6722b04f831c48d2b8b90e494cc56fd6
 
-
