@@ -61,17 +61,11 @@ $runSearch.on('click', function(event) {
 // https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=6722b04f831c48d2b8b90e494cc56fd6
 
 
-
-
-
-
-
-
 //THIS IS FOR CAROUSEL
 
 // Initialize all div with carousel class
 var carousels = bulmaCarousel.attach('.carousel', options);
-​
+
 // Loop on each carousel initialized
 for(var i = 0; i < carousels.length; i++) {
 	// Add listener to  event
@@ -79,7 +73,7 @@ for(var i = 0; i < carousels.length; i++) {
 		console.log(state);
 	});
 }
-​
+
 // Access to bulmaCarousel instance of an element
 var element = document.querySelector('#my-element');
 if (element && element.bulmaCarousel) {
