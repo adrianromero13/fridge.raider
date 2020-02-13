@@ -9,3 +9,7 @@
     color: black;
     text-shadow: slateblue;
 }
+
+.h1 {
+    text-shadow: cadetblue 2px 2px;
+}
