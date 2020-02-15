@@ -7,8 +7,6 @@
     <title>Fridge Raider!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="~bulma-carousel/dist/css/bulma-carousel.min.css" rel="stylesheet">
-
     <script src="https://kit.fontawesome.com/353c561873.js" crossorigin="anonymous"></script>
 
 </head>
@@ -16,7 +14,7 @@
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
+            <a class="navbar-item" href="#">
                 <img class="fas fa-cookie-bite" width="112" height="28">
             </a>
 
@@ -90,7 +88,7 @@
             </div>
         </section>
         <!-- <div class="row"> -->
-        <div class="col-sm-12">
+        <div class="column is-12">
             <br>
 
             <div class="panel-heading">
@@ -103,13 +101,13 @@
             </div>
         </div>
         <div class="columns">
-            <div class="panel-body column is-one-third">
+            <div class="panel-body column">
                 <form role="form">
 
-                    <div class="col-md-4">
+                    <div class="column">
                         <div class="control">
                             <label class="label">How Many Recipes Do You Need?</label>
-                            <div class="select" id="num-records-select">
+                            <div class="select is-rounded" id="num-records-select">
                                 <select>
                                     <option>1</option>
                                     <option>5</option>
@@ -151,29 +149,29 @@
                             </button>
                         </div>
                     </div>
-                    
+
             </div>
-            <div class="column is-three-quarters">
-                <div class="carousel" data-slides-to-scroll="2">
-                    <div class="item-1">
-                      <p>malarchy</p>
+            <div class="column">
+                <div id="slideshow-example" data-component="slideshow">
+                    <div role="list">
+                        <div class="slide">
+                            <img src="" id="image1" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="" id="image2" alt="">
+                        </div>
+                        <div class="slide">
+                            <img src="" id="image3" alt="">
+                        </div>
                     </div>
-                    <div class="item-2"></div>
-                    <div class="item-3"></div>
                 </div>
+
             </div>
+            </form>
         </div>
-        </form>
-
-
-
-
-        <!-- </div> -->
-        <!-- closes container -->
     </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
+    <div class="container">
+        <div class="column is-12">
             <br>
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -190,7 +188,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="container">
         <div class="col-sm-12">
             <hr>
             <h5 class="text-center">
@@ -201,12 +199,17 @@
         </div>
     </div>
     </d iv>
-    <script src="~bulma-carousel/dist/js/bulma-carousel.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
 </html>
+
+<!-- 
+-write function to populate menu in chef top pick section
+-style div for text input images
+-correct api for food images so we dont get dolphins when we type fish and a tit when we write chicken breast
+ -->

@@ -13,3 +13,11 @@
 .h1 {
     text-shadow: cadetblue 2px 2px;
 }
+
+[data-component="slideshow"] .slide {
+    display: none;
+  }
+
+[data-component="slideshow"] .slide.active {
+    display: block;
+  }
