@@ -2,6 +2,32 @@
 const $runSearch = $('#run-search');
 let ingredientsArr = [];
 
+// random item
+
+function random_item(items)
+{
+  
+return items[Math.floor(Math.random()*items.length)];
+     
+}
+
+const items = [0,1,2,3,4,5,6,7,8,9,10];
+// console.log(random_item(items));
+
+
+// call function on each focusout event
+
+
+//clear recipe button
+$('#clear-recipe').on('click',function(){
+  $('#well-section').empty();
+});
+//clear input button
+$('#clear-all').on('click',function(){
+  $('#firstInput').val('');
+  $('#secondInput').val('');
+  $('#thirdInput').val('');
+});
 
 /*  keep these comments for reference */
 // const edamamID = "1c01fad2";
@@ -33,10 +59,13 @@ $runSearch.on('click', function(event) {
         //create variable for href
         let $link = $('<a>');
         $link.attr("href", suggestedRecipes).text(label);
+        $link.attr('target', '_blank');
+        $link.addClass('list-item')
 
 
           //append suggestedRecipes to new
           $topChoice.append($link);
+        
         
           
           //find images in api
@@ -55,13 +84,13 @@ $runSearch.on('click', function(event) {
 $('#firstInput').focusout(function(){
     
   let pixabayURL = "https://pixabay.com/api/?" 
-  +"key=15274524-8509ca86589479da97506d85c" + "&q=" + $('#firstInput').val() + "&image_type=photo";
+  +"key=15274524-8509ca86589479da97506d85c" + "&category=food" + "&q=" + $('#firstInput').val() + "&image_type=photo";
 
   $.ajax({
       url: pixabayURL,
       method: "GET"
   }).then(function(response){
-      let foodImg = response.hits[0].previewURL;
+      let foodImg = response.hits[random_item(items)].largeImageURL;
       $('#image1').attr('src', foodImg);
       // console.log(pixabayURL,foodImg);
   });
@@ -70,13 +99,13 @@ $('#firstInput').focusout(function(){
 $('#secondInput').focusout(function(){
 
 let pixabayURL = "https://pixabay.com/api/?" 
-+"key=15274524-8509ca86589479da97506d85c" + "&q=" + $('#secondInput').val() + "&image_type=photo";
++"key=15274524-8509ca86589479da97506d85c" + "&category=food" + "&q=" + $('#secondInput').val() + "&image_type=photo";
 
 $.ajax({
   url: pixabayURL,
   method: "GET"
 }).then(function(response){
-    let foodImg = response.hits[0].previewURL;
+    let foodImg = response.hits[random_item(items)].largeImageURL;
     $('#image2').attr('src', foodImg);
     // console.log(pixabayURL,foodImg);
 });
@@ -85,15 +114,16 @@ $.ajax({
 $('#thirdInput').focusout(function(){
 
 let pixabayURL = "https://pixabay.com/api/?" 
-+"key=15274524-8509ca86589479da97506d85c" + "&q=" + $('#thirdInput').val() + "&image_type=photo";
++"key=15274524-8509ca86589479da97506d85c" + "&category=food" + "&q=" + $('#thirdInput').val() + "&image_type=photo";
 
 $.ajax({
   url: pixabayURL,
   method: "GET"
 }).then(function(response){
-    let foodImg = response.hits[0].previewURL;
+    let foodImg = response.hits[random_item(items)].largeImageURL;
     $('#image3').attr('src', foodImg);
-    console.log(pixabayURL,foodImg);
+    // console.log(pixabayURL,foodImg);
+
 });
 
 });
@@ -130,4 +160,6 @@ var slideshows = document.querySelectorAll('[data-component="slideshow"]');
       slides[index].classList.add('active');
 
     }, time);
-  }
+  };
+  
+  run
