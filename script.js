@@ -38,45 +38,59 @@ $runSearch.on('click', function(event) {
     let $firstInput = $('#firstInput').val();
     let $secondInput = $('#secondInput').val();
     let $thirdInput = $('#thirdInput').val();
-  let edamamURL = "https://api.edamam.com/search?"
+
+    let edamamURL = "https://api.edamam.com/search?"
     + "q=" + $firstInput + "&" + $secondInput + "&" + $thirdInput
     + "?app_id=1c01fad2&app_key=ffbeaab2531fe96153c73abbf7d533f8";
     
-    console.log(edamamURL);
+    //console.log(edamamURL);
+
+    // $.ajax({
+    //     url: edamamURL,
+    //     method: "GET"
+    //   }).then(function(response) {
+    //       console.log(response);
+    
+    //       let suggestedRecipes = response.hits[0].recipe.url;
+    //       let label = response.hits[0].recipe.label;
+    //       console.log(suggestedRecipes);
+
+    //       //create variables for div
+    //     let $topChoice = $('#well-section');
+    //     //create variable for href
+    //     let $link = $('<a>');
+    //     $link.attr("href", suggestedRecipes).text(label);
+    //     $link.attr('target', '_blank');
+    //     $link.addClass('list-item')
+
+
+    //       //append suggestedRecipes to new
+    //       $topChoice.prepend($link);
+
 
     $.ajax({
-        url: edamamURL,
-        method: "GET"
-      }).then(function(response) {
-          console.log(response);
-    
-          let suggestedRecipes = response.hits[0].recipe.url;
-          let label = response.hits[0].recipe.label;
-          console.log(suggestedRecipes);
-
-          //create variables for div
-        let $topChoice = $('#well-section');
-        //create variable for href
-        let $link = $('<a>');
-        $link.attr("href", suggestedRecipes).text(label);
-        $link.attr('target', '_blank');
-        $link.addClass('list-item')
-
-
-          //append suggestedRecipes to new
-          $topChoice.append($link);
-        
-        
-          
-          //find images in api
-          //set variable for div with class attr of row
-          //set variable for div with column
-          //set variable for image tag
-          //append image using the image from api into this column
-          
-          //find ingredientlist in api
-          //set variable for div
-          
+      url: edamamURL,
+      method: "GET"
+    }).then(function(response) {
+        console.log(response);
+        let dropDown = $("#num-records-select").val();
+        console.log(dropDown);
+        let results = response.hits;
+        for (let i = 0; i < dropDown; i++) {
+  
+        let suggestedRecipes = results[i].recipe.url;
+        let label = results[i].recipe.label;
+        console.log(suggestedRecipes);
+        //create variables for div
+      let $topChoice = $('#well-section');
+      //create variable for href
+      let $link = $('<a>');
+      $link.attr("href", suggestedRecipes).text(label);
+      $link.attr('target', '_blank');
+      $link.addClass('list-item');
+        //append suggestedRecipes to new
+        $topChoice.prepend($link);
+        };  
     });
 });
 
@@ -161,5 +175,3 @@ var slideshows = document.querySelectorAll('[data-component="slideshow"]');
 
     }, time);
   };
-  
-  run
