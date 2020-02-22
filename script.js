@@ -40,34 +40,9 @@ $runSearch.on('click', function(event) {
     let $thirdInput = $('#thirdInput').val();
 
     let edamamURL = "https://api.edamam.com/search?"
-    + "q=" + $firstInput + "&" + $secondInput + "&" + $thirdInput
-    + "?app_id=1c01fad2&app_key=ffbeaab2531fe96153c73abbf7d533f8";
-    
-    //console.log(edamamURL);
-
-    // $.ajax({
-    //     url: edamamURL,
-    //     method: "GET"
-    //   }).then(function(response) {
-    //       console.log(response);
-    
-    //       let suggestedRecipes = response.hits[0].recipe.url;
-    //       let label = response.hits[0].recipe.label;
-    //       console.log(suggestedRecipes);
-
-    //       //create variables for div
-    //     let $topChoice = $('#well-section');
-    //     //create variable for href
-    //     let $link = $('<a>');
-    //     $link.attr("href", suggestedRecipes).text(label);
-    //     $link.attr('target', '_blank');
-    //     $link.addClass('list-item')
-
-
-    //       //append suggestedRecipes to new
-    //       $topChoice.prepend($link);
-
-
+    + "q=" + $firstInput + " " + $secondInput + " " + $thirdInput
+    + "&?app_id=1c01fad2&app_key=ffbeaab2531fe96153c73abbf7d533f8";
+ 
     $.ajax({
       url: edamamURL,
       method: "GET"
