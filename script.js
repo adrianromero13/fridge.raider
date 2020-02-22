@@ -2,22 +2,13 @@
 const $runSearch = $('#run-search');
 let ingredientsArr = [];
 
-// random item
-
-function random_item(items)
-{
-  
-return items[Math.floor(Math.random()*items.length)];
-     
+function random_item(items) {
+  return items[Math.floor(Math.random()*items.length)];
 }
 
 const items = [0,1,2,3,4,5,6,7,8,9,10];
-// console.log(random_item(items));
-
 
 // call function on each focusout event
-
-
 //clear recipe button
 $('#clear-recipe').on('click',function(){
   $('#well-section').empty();
@@ -29,10 +20,7 @@ $('#clear-all').on('click',function(){
   $('#thirdInput').val('');
 });
 
-/*  keep these comments for reference */
-// const edamamID = "1c01fad2";
-// const edamamAPI = "ffbeaab2531fe96153c73abbf7d533f8";
-// let edamamURL = "https://api.edamam.com/search?"
+
 $runSearch.on('click', function(event) {
     event.preventDefault();
     let $firstInput = $('#firstInput').val();
@@ -47,15 +35,12 @@ $runSearch.on('click', function(event) {
       url: edamamURL,
       method: "GET"
     }).then(function(response) {
-        console.log(response);
         let dropDown = $("#num-records-select").val();
-        console.log(dropDown);
         let results = response.hits;
         for (let i = 0; i < dropDown; i++) {
   
         let suggestedRecipes = results[i].recipe.url;
         let label = results[i].recipe.label;
-        console.log(suggestedRecipes);
         //create variables for div
       let $topChoice = $('#well-section');
       //create variable for href
@@ -63,13 +48,13 @@ $runSearch.on('click', function(event) {
       $link.attr("href", suggestedRecipes).text(label);
       $link.attr('target', '_blank');
       $link.addClass('list-item');
-        //append suggestedRecipes to new
+        //prepend suggestedRecipes to new
         $topChoice.prepend($link);
         };  
     });
 });
 
-/* >>>>>>>>>>>>>>>>>>>code for the new API >>>>>>>>>>>>>>>*/
+
 $('#firstInput').focusout(function(){
     
   let pixabayURL = "https://pixabay.com/api/?" 
@@ -81,7 +66,6 @@ $('#firstInput').focusout(function(){
   }).then(function(response){
       let foodImg = response.hits[random_item(items)].largeImageURL;
       $('#image1').attr('src', foodImg);
-      // console.log(pixabayURL,foodImg);
   });
 });
 
@@ -96,7 +80,6 @@ $.ajax({
 }).then(function(response){
     let foodImg = response.hits[random_item(items)].largeImageURL;
     $('#image2').attr('src', foodImg);
-    // console.log(pixabayURL,foodImg);
 });
 
 });
@@ -111,18 +94,10 @@ $.ajax({
 }).then(function(response){
     let foodImg = response.hits[random_item(items)].largeImageURL;
     $('#image3').attr('src', foodImg);
-    // console.log(pixabayURL,foodImg);
-
 });
 
 });
 
-/* <<<<<<<<<<<<<<code for the new API <<<<<<<<<<*/
-
-
-
-
-// https://api.spoonacular.com/food/products/search?query=yogurt&apiKey=6722b04f831c48d2b8b90e494cc56fd6
 
 // This is the area for the carousel
 var slideshows = document.querySelectorAll('[data-component="slideshow"]');
