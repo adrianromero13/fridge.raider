@@ -1,10 +1,6 @@
-Project 1: Fridge Raider
+# Project 1: Fridge Raider
 
-
-
-
-
-About:
+## About:
 
 Our task for Project 1 was to develop an application from scratch and make use of third-party API's to populate and incorporate data retrieved from said APi's into our website making it directly accessible to the user.
 
@@ -15,10 +11,17 @@ Our application is the solution to this very problem. The user has the ability t
 If the user has collected what they need to make their meal, or if they'd like to run another search, they can clear the list of recipes returned from a previous search, or they can clear what they entered in the search fields. This can be done by clicking one or both of the two clear buttons in the application. These two search buttons work independent of each other. One will clear only what they've entered, and the other will clear only the list of recipes that have been returned. If the user clears just the search fields and runs another search, the new list of recipes will be prepended to the original list, making one long, concatenated list of ideas they can use to make their meal.
 
 
+## Table of Contents
+
+* [About](#about)
+* [Technologies](#technologies)
+* [Usage](#usage)
+* [Challenges](#challenges)
+* [Credits](#credits)
+* [License](#license)
 
 
-
-Technologies:
+## Technologies:
 
 The technologies used to create our web application are as follows:
 
@@ -31,11 +34,37 @@ The technologies used to create our web application are as follows:
 - Postman
 - Google (of course)
 
+## Usage 
+
+* Easy User Interface to find recipes inspired by what is in your fridge at the moment
+![FrontPage](./assets/images/fridgeraider.jpg)
+    1. Find the _What is in your fride...raider?_ section and pick how many recipes you want to get back?
+        - 1
+        - 5
+        - 10
+![HowMany](./assets/images/howmany.jpg)
+    2. Type the ingredients you want to use into the three input fields:
+        - What you have _a lot of_...
+        - What you have _some of_...
+        - What you have _a little of_...
+        The ingredients the user inputs will concatenate into the URL that gets generated for the user's specific call requests
+        At the same time, under a .focusout(event) function, the ingredients typed will create a seperate call for each ingredient item using pixabay API
+        The item called will be a url to an image that will get populated into a carousel the user can view to the right of the ingredient's list
+![CarouselAtWork](./assets/images/carousel.jpg)
+    3. Click the search button.
+        - The three ingredients will form a url to perform an Ajax call to get information from the Edamam API.
+        - The user's choice between 1, 5, and 10 recipes will determine how many times the call is made. once the number is determined, the script runs a for loop that runs the onclick function to make the ajax call the number of times the user decides. 
+        - The information receivied are urls to an oustide source that holds the recipe that was received in the call. This url, for each event, is appended into the webpage as an a tag that contains the source of the website that holds the recipe.
+        - As soon as the button _Search_ is clicked, the list is appended for the user to use. Once a link is clicked, the browser will open the webpage in a new tab.
+![CodeAtWork](./assets/images/codeatwork.jpg)
+    4. Clicking the clear buttons
+        -The _Clear Results_ button will change the values using a .val() function and set them equal to nothing
+        -The _Clear Recipe_ button will run a empty() function to erase the HTML elements made in the ***Chef's Top Choices*** section of the webpage.
 
 
 
 
-Challenges:
+## Challenges:
 
 - Many challenges were faced in the development of this application. Learning how to use and implement a brand new CSS framework (Bulma) was difficult at first but after reading the documentation extensively, our team now has the confidence to successfuly use any CSS framework.
 
@@ -54,9 +83,41 @@ Challenges:
 
 
 
-
-Collaborators:
+## Credits
 
 This project was developed and deployed by the software engineering team of Armande Milhouse, Mark Mesina, Adrian Romero, and Mark Younan. We had additional help from our instructor Manny Jucaban, and our TA's Musa Akbari, and Amanda Crawford along with all the online resources we had utilized in fixing bugs and solving problems.
 
-During the time it took to develop the project, we learned that teamwork is absolutely critical in software development. We worked together on every task and each person had a fair amount of contribution to the code as well as the solutions to all the problems we faced. Doing something on your own is simply a recipe for failure. Being able to talk out the code with each other and ask each other questions helped each of us gain a thorough understanding of our application and all the technologies we've learned thus far in the course. Our team worked really well together and we are looking forward to the next project to tackle. Till then, we will be working together on our homework assignments to help each other understand the new things we learn in class.
+* Collaborators:    
+    - **[Armande925](http://github.com/armande925)**
+    - **[Adrianromero13](http://github.com/adrianromero13)**
+    - **[Markmesina](https://github.com/markmesina)**
+    - **[Markyounan11](https://github.com/markyounan11)**
+
+* UC Berkeley, Extensions Full Stack Development BootCamp Instructors & Assistants
+    - Manny Jucaban
+    - Musa Akbari
+    - Amanda Crawford
+
+* Google inc.           **[Google](https://www.google.com)**
+* Edamam API            **[Edamam](https://developer.edamam.com/)**
+* Pixabay API           **[Pixabay](https://pixabay.com/)**
+* Gihpy API             **[Giphy](https://giphy.com/)**
+    
+
+
+
+## License
+
+[GNU General Public License v3.0](./LICENSE.txt)
+
+
+
+
+## Contributing
+
+
+[Contributor Covenant](https://www.contributor-covenant.org/)
+
+
+---
+Fridge Raider 2020 Project-One
